@@ -101,6 +101,23 @@ DATA_ROOT=./datasets/horse2zebra name=horse2zebra_model phase=test th test.lua
 The test results will be saved to a html file here: `./results/horse2zebra_model/latest_test/index.html`.
 
 
+### Running on floydhub
+
+Train the model:
+
+```bash
+floyd init
+floyd run --gpu --env torch --data f9RVzpea4vb9uCLaDggUgX 'bash ./floydhub/dream.sh horse2zebra'
+```
+
+Test your trained model:
+
+```bash
+# test_image is a flat directory that contains images you want to transform
+floyd run --gpu --env torch --data DATA_ID_FOR_TRAINED_MODEL 'bash ./floydhub/test.sh horse2zebra test_image'
+```
+
+
 ## Model Zoo
 Download the pre-trained models with the following script. The model will be saved to `./checkpoints/model_name/latest_net_G.t7`.
 ```bash
@@ -132,8 +149,6 @@ This will run the model named `expt_name` in both directions on all images in `/
 If `which_direction` is 'BtoA', the two sets A and B of the datasets are flipped.
 Result images, and a webpage to view them, are saved to `./results/expt_name` (can be changed by passing `results_dir=your_dir` in test.lua).  
 See `opt_test` in `options.lua` for additional test options. Please use `model=one_direction_test` if you only would like to generate outputs of the trained network in only one direction.
-
-
 
 
 ## Datasets

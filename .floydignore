@@ -1,0 +1,33 @@
+
+# Directories to ignore when uploading code to floyd
+# Do not add a trailing slash for directories
+
+.git
+.eggs
+eggs
+lib
+lib64
+parts
+sdist
+var
+LICENSE
+README.md
+
+pretrained_models
+imgs
+cache
+
+datasets/ae_photos
+datasets/apple2orange
+datasets/cityscapes
+datasets/facades
+datasets/horse2zebra
+datasets/maps
+datasets/summer2winter_yosemite
+datasets/monet2photo
+datasets/vangogh2photo
+datasets/ukiyoe2photo
+datasets/cezanne2photo
+datasets/iphone2dslr_flower
+
+checkpoints
